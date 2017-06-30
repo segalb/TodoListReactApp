@@ -10,7 +10,18 @@ class Todo extends React.Component {
   }
   render(){
     return(
-      <li  key={this.props.index} style={ this.props.completed ? {textDecoration:"line-through"}:{} }> <button type="button">x</button> {this.props.item}</li>
+      <li
+        style={ this.props.completed ? {textDecoration:"line-through"}:{} }>
+        <button
+          onClick={this.props.xClick}
+          type="button">x
+        </button>
+        {this.props.item}
+        <button
+          onClick={this.props.toggleTodoClick}
+          type="button">toggle
+        </button>
+      </li>
     );
   }
 }
